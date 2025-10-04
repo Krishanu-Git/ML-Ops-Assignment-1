@@ -1,6 +1,7 @@
 # misc.py
 
 import logging
+import sys
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
@@ -10,11 +11,13 @@ from sklearn.pipeline import Pipeline
 
 # Configure module-level logger
 logger = logging.getLogger(__name__)
+
 if not logging.getLogger().handlers:
     # Basic configuration if no handlers are configured by the application
     logging.basicConfig(
         level=logging.DEBUG,
-        format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+        format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+        handlers=[logging.StreamHandler(sys.stdout)]
     )
 
 # --- Data Loading ---
