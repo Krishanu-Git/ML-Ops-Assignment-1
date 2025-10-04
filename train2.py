@@ -1,6 +1,7 @@
 # train2.py (for KernelRidge) with logging
 
 import time
+import sys
 import logging
 
 from sklearn.kernel_ridge import KernelRidge
@@ -9,7 +10,8 @@ from misc import load_boston_data, preprocess_data, train_and_evaluate_model
 # Configure root logger
 logging.basicConfig(
     level=logging.DEBUG,
-    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    handlers=[logging.StreamHandler(sys.stdout)]
 )
 logger = logging.getLogger(__name__)
 

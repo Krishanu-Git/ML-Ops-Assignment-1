@@ -33,3 +33,8 @@ jobs:
         run: |
           echo "Running training script for Kernel Ridge..."
           python train2.py
+
+      - name: Compare Models
+        run: |
+          echo "Comparing model performances..."
+          python compare_models.py
